@@ -1,0 +1,91 @@
+
+touch index.html style.css script.js -> This command make all 3 file using git bash shell. 
+
+To create git repository-> 
+    git init -> .git folder will be created if we wish to see that we have check in hidden items. After initialization we can see that master which is main branch in the github. Once we delete the .git folder then the whole folder will be normal folder. Once we run another command. master will be written there in terminal. and U sign will be there which means these files are untracked. To track the file we can go Source control and click on + symbol whenever we hover on the file name otherwise comamnd is "git add file_name" for all files git add . "
+
+To see status -> git status
+To see status in short -> git status -s 
+To commit the changes -> git commit -m "Comment to be writen what changes has been made"
+To check github user name linked currently -> git config --global user.name
+To check github user email linked currently -> git config --global user.email
+To configure email of github -> git config --global user.email "email_address"
+To configure name of github -> git config --global user.name "name"
+To get the log of the commit -> git log
+To go back to the older version -> git checkout "commit_id" -> commit id we can get using git log command. 
+To go to current version -> git checkout branch_name
+Gitlens extension helps us in various way to get info about the changes. 
+To get the branches name -> git branch
+To crate a branch -> git branch branch_name
+To switch across branches -> git checkout branch_name
+To get all branch commit record -> git log --all
+To get all branches commit record in short -> git log --all --oneline
+To get all branches commit record in short with some style -> git log --all --oneline --graph
+To delete a branch (No commit is made) -> git branch --delete branch_name
+To delete a branch where commit was made, In that case we will not be able to delete with above command. we have to enter another command -> git branch --D branch_name
+
+The connection between branch will be from current branch so we need to check our current branch. 
+
+To merge 2 branches -> git merge branch_name  (Provided branch will be merged into current branch)
+
+Sometime terminal got block then we should use "q" to exit.
+
+To delete a branch -> git branch --delete branch_name
+To get the origin of the repository (basically the GitHub location where code is uploaded) -> git remote show origin
+
+*GitHub*
+
+create a new repository on the command line:-
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/JoydeepPaul399/test.git
+git push -u origin main
+
+
+push an existing repository from the command line: 
+
+git remote add origin https://github.com/JoydeepPaul399/test.git
+git branch -M main
+git push -u origin main
+
+we can use same command to push multiple branch in GitHub. git push -u origin branch_name
+
+To push the code in GitHub -> git push
+
+To fetch the data from GitHub (changes done in GitHub by others) -> git fetch
+To clone the repository -> git clone address
+
+After fetching we can merge like this way -> git merge origin/main
+
+we can do the same in a single command -> git pull -> shortcut of git fetch + git merge origin/main
+
+To go back older commit: That will work for local git if code was pushed in GitHub in that case it should not be used. 
+git reset --hard older_commit_id_where_we_need_to_go 
+	-- three options are there hard, soft, mixed (by default is mixed)
+
+git reset --soft older_commit_id_where_we_need_to_go‎
+	In case soft, file commits removed and still codes stays in stage section we need to discard them manually. but in case hard everything gets removed. 
+
+git reset older_commit_id_where_we_need_to_go
+	In this case --mixed option be there. which removes commit but still codes be there in file in the change section we can find and discard them. 
+
+git reflog -> shows all commit details, reset commits also displayed by using them we can move to the version we want to reach.  Now using git reset --hard version_id -> that will throw us to the version we want to move.
+
+we can also checkout through git checkout commit_id
+git checkout head~4 -> send head down to 4 number . Our current directory depends on head position.
+To attach the head with main git checkout main 
+
+
+Note: Once we push our code in GitHub we should not reset then we should revert it. 
+To revert -> git revert commit_id 
+Now that changes was made in local so if we thing we did revert by mistakely we can go back git reset --hard head~1
+
+git revert head~3..head --> a series will be reverted
+
+
+
+
+
